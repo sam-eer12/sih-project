@@ -8,9 +8,13 @@ import "./globals.css"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "DeepSea eDNA AI - Marine Biodiversity Research",
+  title: "SIH25042 Project",
   description: "AI-driven identification of eukaryotic taxa from deep-sea environmental DNA",
-  generator: "v0.app",
+  generator: "systummmmmmmm",
+  icons: {
+    icon: "/favicon3.png",
+    
+  },
 }
 
 export default function RootLayout({
@@ -20,6 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>
           <WavyNeonBackground />
