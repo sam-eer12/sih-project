@@ -24,7 +24,7 @@ def get_user_input_choice():
     print("2. Classify a CSV file with abundance data")
     print("3. Classify individual DNA sequences")
     print("4. Run quick test with sample data")
-    print("5. Test the specific sequence you provided")
+    # print("5. Test the specific sequence you provided")
     print("="*60)
     
     while True:
