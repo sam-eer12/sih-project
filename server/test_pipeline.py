@@ -138,7 +138,7 @@ def get_user_input_choice():
     
     while True:
         try:
-            choice = input("Enter your choice (1-5): ").strip()
+            choice = input("Enter your choice (1-4): ").strip()
             if choice in ['1', '2', '3', '4', '5']:
                 return int(choice)
             else:
