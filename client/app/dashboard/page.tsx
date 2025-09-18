@@ -7,9 +7,13 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { ArrowLeft, Search, Filter, Download, Eye, Info, ExternalLink, Microscope } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ArrowLeft, Search, Filter, Download, Eye, Info, ExternalLink, Microscope, Zap, Upload, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import { SequenceInput } from "@/components/sequence-input"
+import { FileUpload } from "@/components/file-upload"
+import { SequenceClassificationResponse, FileClassificationResponse } from "@/lib/api"
 
 // Sample data for demonstration
 const biodiversityData = [
@@ -153,11 +157,29 @@ const taxaData = [
   },
 ]
 
-export default function DashboardPage() {
+export default function Dashboard() {
+  const [selectedSample, setSelectedSample] = useState("all")
   const [searchTerm, setSearchTerm] = useState("")
-  const [noveltyFilter, setNoveltyFilter] = useState("all")
+  const [showDetails, setShowDetails] = useState(false)
+  const [analysisResults, setAnalysisResults] = useState<{
+    sequence?: SequenceClassificationResponse;
+    file?: FileClassificationResponse;
+  }>({})
+  const [activeTab, setActiveTab] = useState("overview")
   const [selectedTaxon, setSelectedTaxon] = useState<(typeof taxaData)[0] | null>(null)
   const [hoveredSegment, setHoveredSegment] = useState<(typeof biodiversityData)[0] | null>(null)
+  const [noveltyFilter, setNoveltyFilter] = useState("all")
+
+  // Handlers for analysis results
+  const handleSequenceResults = (results: SequenceClassificationResponse) => {
+    setAnalysisResults(prev => ({ ...prev, sequence: results }))
+    setActiveTab("analysis")
+  }
+
+  const handleFileResults = (results: FileClassificationResponse) => {
+    setAnalysisResults(prev => ({ ...prev, file: results }))
+    setActiveTab("analysis")
+  }
 
   const filteredTaxa = taxaData.filter((taxon) => {
     const matchesSearch =
@@ -258,6 +280,27 @@ export default function DashboardPage() {
       {/* Main Dashboard Content */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="overview" className="flex items-center gap-2">
+                <Microscope className="h-4 w-4" />
+                Overview
+              </TabsTrigger>
+              <TabsTrigger value="sequence" className="flex items-center gap-2">
+                <Zap className="h-4 w-4" />
+                Sequence Analysis
+              </TabsTrigger>
+              <TabsTrigger value="upload" className="flex items-center gap-2">
+                <Upload className="h-4 w-4" />
+                File Upload
+              </TabsTrigger>
+              <TabsTrigger value="analysis" className="flex items-center gap-2">
+                <BarChart3 className="h-4 w-4" />
+                Results
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="overview" className="space-y-6">
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {/* Biodiversity Pie Chart */}
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
@@ -459,8 +502,8 @@ export default function DashboardPage() {
               </div>
             </CardContent>
           </Card>
-        </div>
-      </section>
+        {/* </div>
+      </section> */}
 
       {/* Enhanced Species Detail Modal/Card */}
       {selectedTaxon && (
@@ -589,6 +632,120 @@ export default function DashboardPage() {
           </Card>
         </div>
       )}
+            </TabsContent>
+
+            <TabsContent value="sequence" className="space-y-6">
+              <SequenceInput onResults={handleSequenceResults} />
+            </TabsContent>
+
+            <TabsContent value="upload" className="space-y-6">
+              <FileUpload onResults={handleFileResults} />
+            </TabsContent>
+
+            <TabsContent value="analysis" className="space-y-6">
+              {analysisResults.sequence && (
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Sequence Analysis Results</CardTitle>
+                    <CardDescription>
+                      Classification results for your DNA sequence
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold mb-2">Classification</h4>
+                        <div className="space-y-2">
+                          <div className="flex justify-between">
+                            <span>Predicted Phylum:</span>
+                            <Badge>{analysisResults.sequence.classification.predicted_phylum}</Badge>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Confidence:</span>
+                            <Badge variant="outline">
+                              {(analysisResults.sequence.classification.confidence * 100).toFixed(1)}%
+                            </Badge>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">Sequence Info</h4>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between">
+                            <span>Length:</span>
+                            <span>{analysisResults.sequence.sequence_info.length} bp</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>GC Content:</span>
+                            <span>{analysisResults.sequence.sequence_info.gc_content}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {analysisResults.file && (
+                <Card>
+                  <CardHeader>
+                    <CardTitle>File Analysis Results</CardTitle>
+                    <CardDescription>
+                      Batch processing results for {analysisResults.file.file_info.filename}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                      <div className="text-center p-3 bg-muted/50 rounded-lg">
+                        <div className="text-lg font-semibold">
+                          {analysisResults.file.file_info.total_asvs || analysisResults.file.file_info.total_sequences || 0}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {analysisResults.file.file_info.file_type === 'CSV' ? 'ASVs' : 'Sequences'}
+                        </div>
+                      </div>
+                      {analysisResults.file.classification_summary && (
+                        <>
+                          <div className="text-center p-3 bg-green-50 dark:bg-green-950 rounded-lg">
+                            <div className="text-lg font-semibold text-green-700 dark:text-green-300">
+                              {analysisResults.file.classification_summary.total_classified}
+                            </div>
+                            <div className="text-xs text-green-600 dark:text-green-400">Classified</div>
+                          </div>
+                          <div className="text-center p-3 bg-orange-50 dark:bg-orange-950 rounded-lg">
+                            <div className="text-lg font-semibold text-orange-700 dark:text-orange-300">
+                              {analysisResults.file.classification_summary.unassigned}
+                            </div>
+                            <div className="text-xs text-orange-600 dark:text-orange-400">Unassigned</div>
+                          </div>
+                          <div className="text-center p-3 bg-purple-50 dark:bg-purple-950 rounded-lg">
+                            <div className="text-lg font-semibold text-purple-700 dark:text-purple-300">
+                              {analysisResults.file.novel_taxa_candidates?.length || 0}
+                            </div>
+                            <div className="text-xs text-purple-600 dark:text-purple-400">Novel Taxa</div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {!analysisResults.sequence && !analysisResults.file && (
+                <Card>
+                  <CardContent className="text-center py-12">
+                    <div className="text-muted-foreground">
+                      <Zap className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                      <h3 className="text-lg font-semibold mb-2">No Analysis Results</h3>
+                      <p>Run a sequence analysis or upload a file to see results here.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
     </div>
   )
 }
