@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " concurrently \"cd client && npm run dev\" \"cd server && python app.py\""
-
+    "dev": "concurrently \"cd server && python app.py\" \"cd client && npm run dev\""
   },
   "author": "",
   "license": "ISC",
