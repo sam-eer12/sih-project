@@ -31,7 +31,7 @@ export function FileUpload({ onResults }: FileUploadProps) {
   const [results, setResults] = useState<FileClassificationResponse | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const supportedFormats = ['csv', 'fasta', 'fa', 'txt']
+  const supportedFormats = ['csv', 'fasta', 'fa', 'fas', 'txt']
   const maxFileSize = 16 * 1024 * 1024 // 16MB
 
   const handleFileSelect = (selectedFile: File) => {
@@ -250,6 +250,7 @@ export function FileUpload({ onResults }: FileUploadProps) {
             <ul className="space-y-1 ml-4">
               <li><strong>CSV:</strong> Abundance data with ASV and taxonomy columns</li>
               <li><strong>FASTA/FA:</strong> DNA sequences in FASTA format</li>
+              <li><strong>FAS:</strong> Plain sequence files (one sequence per line)</li>
               <li><strong>TXT:</strong> Plain text files with sequences</li>
             </ul>
           </div>

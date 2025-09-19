@@ -667,7 +667,6 @@ class eDNAProcessor:
         """
         annotations = {}
         
-        # Combine marker and BOLD data for annotation
         annotation_data = []
         
         if 'marker_data' in self.processed_data:
