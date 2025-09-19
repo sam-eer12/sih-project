@@ -1,0 +1,9 @@
+# Ignore machine learning models and datasets
+models/
+test_models/
+dataset/
+server/phylum_classifier_model.pkl
+
+# You can also ignore other non-essential files
+*.log
+.DS_Store
