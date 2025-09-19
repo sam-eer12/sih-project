@@ -16,7 +16,5 @@
   "env": {
     "PYTHONPATH": ".",
     "FLASK_ENV": "production"
-  },
-
-  "regions": ["bom1", "sin1"]
+  }
 }
