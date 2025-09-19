@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Brain, Cpu, Zap, Target, ArrowRight, CheckCircle, TrendingUp } from "lucide-react"
+import { ArrowLeft, Brain, Cpu, Zap, Target, ArrowRight, CheckCircle, TrendingUp, Database, ExternalLink, FileText, BarChart3 } from "lucide-react"
 import Link from "next/link"
 
 export default function SolutionPage() {
@@ -333,8 +333,148 @@ export default function SolutionPage() {
         </div>
       </section>
 
-      {/* Expected Impact */}
+      {/* Our Collected Dataset */}
       <section className="py-20 bg-card/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4">
+              Research Data
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Collected Dataset</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive eDNA datasets from diverse marine environments, curated and processed for AI training and validation
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Database className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Comprehensive Coverage</h3>
+                  <p className="text-muted-foreground">
+                    Our dataset includes eDNA samples from various marine environments, covering multiple taxonomic groups
+                    and geographic regions to ensure robust AI model training.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FileText className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Quality Assured</h3>
+                  <p className="text-muted-foreground">
+                    All sequences undergo rigorous quality control and validation processes, ensuring high-quality data
+                    for reliable AI model performance and accurate biodiversity assessments.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <BarChart3 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Research Ready</h3>
+                  <p className="text-muted-foreground">
+                    Preprocessed and annotated datasets ready for machine learning applications, biodiversity analysis,
+                    and comparative studies in marine ecology research.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <Card className="border-border/50 bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-sm">
+              <CardHeader className="text-center">
+                <Database className="h-16 w-16 text-primary mx-auto mb-4" />
+                <CardTitle className="text-2xl">Dataset Access</CardTitle>
+                <CardDescription className="text-lg mt-4">
+                  Access our curated eDNA dataset collection for research and collaboration
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Sample Count</span>
+                    <Badge variant="default" className="bg-primary">
+                      1000+
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Taxonomic Groups</span>
+                    <Badge variant="default" className="bg-accent">
+                      7 Phyla
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Marker Genes</span>
+                    <Badge variant="default" className="bg-primary">
+                      18S & COI
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Data Format</span>
+                    <Badge variant="default" className="bg-accent">
+                      FASTA/CSV
+                    </Badge>
+                  </div>
+                </div>
+                
+                <div className="pt-4 border-t border-border/50">
+                  <Button asChild className="w-full">
+                    <a 
+                      href="https://drive.google.com/drive/folders/1tG1go0HU-evbB8VfIPE50LkZiDRy2afi?usp=drive_link" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
+                      Access Dataset
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <p className="text-xs text-muted-foreground text-center mt-2">
+                    Google Drive • Use NSUT College ID • Research Use Only
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Dataset Statistics */}
+          <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg p-8">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Dataset Statistics</h3>
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-primary mb-2">18S rRNA</div>
+                <div className="text-muted-foreground">Eukaryotic Marker</div>
+                <div className="text-sm text-muted-foreground mt-1">Universal primer coverage</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-accent mb-2">COI</div>
+                <div className="text-muted-foreground">Metazoan Marker</div>
+                <div className="text-sm text-muted-foreground mt-1">Species-level resolution</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-primary mb-2">Deep-Sea</div>
+                <div className="text-muted-foreground">Environment Focus</div>
+                <div className="text-sm text-muted-foreground mt-1">Underrepresented ecosystems</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-accent mb-2">BOLD</div>
+                <div className="text-muted-foreground">Database Integration</div>
+                <div className="text-sm text-muted-foreground mt-1">Reference validation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expected Impact */}
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">
