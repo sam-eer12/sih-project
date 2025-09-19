@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+::-webkit-scrollbar{
+  display:none
+}
+
 :root {
   --background: oklch(0.05 0.02 240); /* Very dark blue-black */
   --foreground: oklch(0.98 0 0); /* Near white */
