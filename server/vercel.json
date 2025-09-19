@@ -17,11 +17,6 @@
     "PYTHONPATH": ".",
     "FLASK_ENV": "production"
   },
-  "functions": {
-    "app.py": {
-      "maxDuration": 300,
-      "memory": 3008
-    }
-  },
+  
   "regions": ["bom1", "sin1"]
 }
