@@ -3,7 +3,7 @@
  * Handles communication with Flask backend
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 export interface SequenceClassificationRequest {
   sequence: string;
@@ -158,7 +158,7 @@ class ApiService {
    * Check API health status
    */
   async healthCheck(): Promise<{ status: string; timestamp: string; processor_initialized: boolean }> {
-    const response = await fetch(`${API_BASE_URL}/health`);
+    const response = await fetch(`${API_BASE_URL}/api/health`);
     return this.handleResponse(response);
   }
 
@@ -166,7 +166,7 @@ class ApiService {
    * Classify a single DNA sequence
    */
   async classifySequence(request: SequenceClassificationRequest): Promise<SequenceClassificationResponse> {
-    const response = await fetch(`${API_BASE_URL}/classify/sequence`, {
+    const response = await fetch(`${API_BASE_URL}/api/classify/sequence`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ class ApiService {
     const formData = new FormData();
     formData.append('file', file);
 
-    const response = await fetch(`${API_BASE_URL}/classify/file`, {
+    const response = await fetch(`${API_BASE_URL}/api/classify/file`, {
       method: 'POST',
       body: formData,
     });
@@ -194,7 +194,7 @@ class ApiService {
    * Get detailed analysis results
    */
   async getAnalysisResults(analysisId: string): Promise<DetailedAnalysisResponse> {
-    const response = await fetch(`${API_BASE_URL}/analysis/${analysisId}`);
+    const response = await fetch(`${API_BASE_URL}/api/analysis/${analysisId}`);
     return this.handleResponse(response);
   }
 
@@ -202,7 +202,7 @@ class ApiService {
    * Export analysis results
    */
   async exportResults(analysisId: string, format: 'csv' | 'report'): Promise<Blob> {
-    const response = await fetch(`${API_BASE_URL}/export/${analysisId}/${format}`);
+    const response = await fetch(`${API_BASE_URL}/api/export/${analysisId}/${format}`);
     if (!response.ok) {
       throw new Error(`Export failed: ${response.statusText}`);
     }
@@ -213,7 +213,7 @@ class ApiService {
    * Get system statistics
    */
   async getSystemStats(): Promise<SystemStats> {
-    const response = await fetch(`${API_BASE_URL}/stats`);
+    const response = await fetch(`${API_BASE_URL}/api/stats`);
     return this.handleResponse(response);
   }
 
