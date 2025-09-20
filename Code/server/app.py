@@ -203,6 +203,40 @@ def validate_dna_sequence(sequence):
     
     return True, sequence
 
+@app.route('/', methods=['GET'])
+def base_route():
+    """Base route with random message"""
+    random_messages = [
+        "🌊 Welcome to the Deep-Sea eDNA Analysis Portal! Dive into biodiversity discovery!",
+        "🧬 Exploring the mysteries of deep-sea life through environmental DNA!",
+        "🔬 AI-powered biodiversity assessment at your fingertips!",
+        "🌊 Unlocking the secrets of the ocean's genetic treasure trove!",
+        "🐠 Discovering new species in the depths of our oceans!",
+        "🧪 Where cutting-edge AI meets marine biology research!",
+        "🌊 Your gateway to understanding deep-sea ecosystems!",
+        "🔬 Revolutionizing marine biodiversity research with AI!",
+        "🧬 From DNA sequences to species discovery - welcome aboard!",
+        "🌊 Charting the unexplored territories of marine life!"
+    ]
+    
+    selected_message = random.choice(random_messages)
+    
+    return jsonify({
+        'message': selected_message,
+        'project': 'SIH 2024 - AI-driven Deep-Sea Biodiversity Assessment',
+        'description': 'Environmental DNA analysis pipeline for discovering marine biodiversity',
+        'version': '1.0.0',
+        'endpoints': {
+            'health': '/api/health',
+            'classify_sequence': '/api/classify/sequence',
+            'classify_file': '/api/classify/file',
+            'analysis_results': '/api/analysis/<id>',
+            'export_results': '/api/export/<id>/<format>',
+            'system_stats': '/api/stats'
+        },
+        'timestamp': datetime.now().isoformat()
+    })
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
