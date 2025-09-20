@@ -305,15 +305,16 @@ export default function Dashboard() {
             {/* Biodiversity Pie Chart */}
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-xl">Taxonomic Distribution</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl text-white">Taxonomic Distribution</CardTitle>
+                <CardDescription className="text-white">
                   Relative abundance of major taxonomic groups identified in deep-sea samples
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
+                <ResponsiveContainer className="bg-purple-900 opacity-85 rounded-3xl" width="100%" height={300}>
+                  <PieChart >
                     <Pie
+                    className="border border-white"
                       data={biodiversityData}
                       cx="50%"
                       cy="50%"
@@ -371,20 +372,20 @@ export default function Dashboard() {
                 <CardDescription>Distribution of species richness across different depth zones</CardDescription>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={abundanceData}>
+                <ResponsiveContainer className="bg-purple-900 opacity-85 rounded-3xl" width="100%" height={300}>
+                  <BarChart className="text-white" data={abundanceData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
                     <XAxis dataKey="depth" stroke="#ffffff" fontSize={12} />
                     <YAxis stroke="#ffffff" fontSize={12} />
-                    <Tooltip
+                    <Tooltip 
                       contentStyle={{
-                        backgroundColor: "hsl(var(--card))",
+                        backgroundColor: "gray",
                         border: "1px solid hsl(var(--border))",
                         borderRadius: "6px",
                         color: "#ffffff",
                       }}
                     />
-                    <Bar dataKey="species" fill="hsl(var(--primary))" name="Species Count" />
+                    <Bar className="bg-white" dataKey="species" fill="hsl(var(--primary))" name="Species Count" />
                   </BarChart>
                 </ResponsiveContainer>
               </CardContent>
