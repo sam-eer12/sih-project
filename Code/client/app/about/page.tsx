@@ -377,44 +377,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CMLRE Partnership */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardHeader className="text-center">
-              <Users className="h-16 w-16 text-primary mx-auto mb-4" />
-              <CardTitle className="text-3xl">Partnership with CMLRE</CardTitle>
-              <CardDescription className="text-lg mt-4">Central Marine Living Resources and Ecology</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground leading-relaxed">
-                Our research is conducted in partnership with the Central Marine Living Resources and Ecology (CMLRE), a
-                leading institution in marine biodiversity research. This collaboration ensures that our AI-driven tools
-                meet the real-world needs of marine biologists and conservation scientists.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Research Excellence</h4>
-                  <p className="text-sm text-muted-foreground">
-                    CMLRE brings decades of expertise in marine ecology and biodiversity assessment to guide our AI
-                    development efforts.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Field Validation</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Real-world testing and validation of our AI tools in diverse marine environments ensures practical
-                    applicability.
-                  </p>
-                </div>
-              </div>
-              <div className="text-center pt-4">
-                <Button variant="outline">Learn More About CMLRE</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      
     </div>
   )
 }
