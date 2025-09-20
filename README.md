@@ -10,10 +10,10 @@ This README provides an overview of the project, including team details, relevan
 
 **Team Members:**
 
-- **MEMBER_1** - 2024UIC7627 - [@vedajoshi14](https://github.com/vedajoshi14)
-- **MEMBER_2** - 2024UIC4179 - [@sam-eer12](https://github.com/sam-eer12)
-- **MEMBER_3** - 2024UIC4133 - [@anmolmittal69](https://github.com/anmolmittal69)
-- **MEMBER_4** - 2024UIC4137 - [@SanidhyaUpadhyay1](https://github.com/SanidhyaUpadhyay1)
+- **Veda Joshi** - 2024UIC7627 - [@vedajoshi14](https://github.com/vedajoshi14)
+- **Sameer Gupta** - 2024UIC4179 - [@sam-eer12](https://github.com/sam-eer12)
+- **Anmol Mittal** - 2024UIC4133 - [@anmolmittal69](https://github.com/anmolmittal69)
+- **Sanidhya Upadhyay** - 2024UIC4137 - [@SanidhyaUpadhyay1](https://github.com/SanidhyaUpadhyay1)
 - **MEMBER_5** - 2024UIC4155 - [@USERNAME](https://github.com/USERNAME)
 - **MEMBER_6** - 2024UIC4158 - [@USERNAME](https://github.com/USERNAME)
 
