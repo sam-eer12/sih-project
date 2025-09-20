@@ -4,23 +4,24 @@ This README provides an overview of the project, including team details, relevan
 
 ## Team Details
 
-**Team Name:** TEAM_NAME_HERE
+**Team Name:** Winners and sons.
 
-**Team Leader:** [@USERNAME](https://github.com/USERNAME)
+**Team Leader:** [@vedajoshi14](https://github.com/vedajoshi14)
 
 **Team Members:**
 
-- **MEMBER_1** - ROLL_NUMBER - [@USERNAME](https://github.com/USERNAME)
-- **MEMBER_2** - ROLL_NUMBER - [@USERNAME](https://github.com/USERNAME)
-- **MEMBER_3** - ROLL_NUMBER - [@USERNAME](https://github.com/USERNAME)
-- **MEMBER_4** - ROLL_NUMBER - [@USERNAME](https://github.com/USERNAME)
-- **MEMBER_5** - ROLL_NUMBER - [@USERNAME](https://github.com/USERNAME)
-- **MEMBER_6** - ROLL_NUMBER - [@USERNAME](https://github.com/USERNAME)
+- **MEMBER_1** - 2024UIC7627 - [@vedajoshi14](https://github.com/vedajoshi14)
+- **MEMBER_2** - 2024UIC4179 - [@sam-eer12](https://github.com/sam-eer12)
+- **MEMBER_3** - 2024UIC4133 - [@anmolmittal69](https://github.com/anmolmittal69)
+- **MEMBER_4** - 2024UIC4137 - [@SanidhyaUpadhyay1](https://github.com/SanidhyaUpadhyay1)
+- **MEMBER_5** - 2024UIC4155 - [@USERNAME](https://github.com/USERNAME)
+- **MEMBER_6** - 2024UIC4158 - [@USERNAME](https://github.com/USERNAME)
 
 ## Project Links
 
-- **SIH Presentation:** [Final SIH Presentation](URL TO PPT UPLOADED TO GITHUB)
+- **SIH Presentation:** [Final SIH Presentation](https://github.com/sam-eer12/sih-project)
 - **Video Demonstration:** [Watch Video](UNLISTED YOUTUBE LINK)
-- **Live Deployment:** [View Deployment](DEPLOYED LINK IF ANY)
-- **Source Code:** [GitHub Repository](GITHUB LINK TO THE REPO)
-- **Additional Resources:** [Other Relevant Links](ANY OTHER RELEVANT LINKS)
+- **Live Deployment:** [View Deployment](https://sih-project-uimw.vercel.app/)
+**NOTE:as of now The server is not running on vercel due to some api related issues just the frontend is live**
+- **Source Code:** [GitHub Repository](https://github.com/sam-eer12/sih-project)
+- **Additional Resources:** [Our colleceted dataset](https://drive.google.com/drive/folders/1tG1go0HU-evbB8VfIPE50LkZiDRy2afi?usp=drive_link)
