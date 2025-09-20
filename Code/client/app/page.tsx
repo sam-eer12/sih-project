@@ -13,7 +13,7 @@ export default function HomePage() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Dna className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">DeepSea eDNA AI</span>
+              <span className="text-xl font-bold text-foreground">Oceanus AI</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
