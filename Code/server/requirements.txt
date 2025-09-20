@@ -1,12 +1,18 @@
-# Lightweight eDNA Analysis Pipeline Requirements
-# Core essentials only for Vercel deployment
+# server/requirements.txt (Updated for Vercel compatibility)
 
-# Web Framework (minimal versions)
-flask==2.3.3
-flask-cors==4.0.0
+# Core ML and data handling libraries
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+joblib==1.4.0
 
-# Essential data processing (lightweight)
-numpy==1.24.3
+# Web framework
+flask==3.0.3
+flask-cors==4.0.1
 
-# File handling
-python-multipart==0.0.6
+# For loading models from URLs and .env files
+requests==2.31.0
+python-dotenv==1.0.1
+
+# Other dependencies (if you add more later)
+# e.g., gunicorn
