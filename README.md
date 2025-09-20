@@ -14,8 +14,8 @@ This README provides an overview of the project, including team details, relevan
 - **Sameer Gupta** - 2024UIC4179 - [@sam-eer12](https://github.com/sam-eer12)
 - **Anmol Mittal** - 2024UIC4133 - [@anmolmittal69](https://github.com/anmolmittal69)
 - **Sanidhya Upadhyay** - 2024UIC4137 - [@SanidhyaUpadhyay1](https://github.com/SanidhyaUpadhyay1)
-- **MEMBER_5** - 2024UIC4155 - [@USERNAME](https://github.com/USERNAME)
-- **MEMBER_6** - 2024UIC4158 - [@USERNAME](https://github.com/USERNAME)
+- **Kunal Verma** - 2024UIC4155 - [@USERNAME](https://github.com/kunalverma-1)
+- **Aniket Raj** - 2024UIC4158 - [@USERNAME](https://github.com/USERNAME)
 
 ## Project Links
 
