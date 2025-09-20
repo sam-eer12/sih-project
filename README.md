@@ -22,6 +22,9 @@ This README provides an overview of the project, including team details, relevan
 - **SIH Presentation:** [Final SIH Presentation](https://github.com/sam-eer12/sih-project)
 - **Video Demonstration:** [Watch Video](UNLISTED YOUTUBE LINK)
 - **Live Deployment:** [View Deployment](https://sih-project-uimw.vercel.app/)
-**NOTE:as of now The server is not running on vercel due to some api related issues just the frontend is live**
 - **Source Code:** [GitHub Repository](https://github.com/sam-eer12/sih-project)
 - **Additional Resources:** [Our colleceted dataset](https://drive.google.com/drive/folders/1tG1go0HU-evbB8VfIPE50LkZiDRy2afi?usp=drive_link)
+
+## Note
+
+**NOTE:as of now The server is not running on vercel due to some api related issues just the frontend is live**
