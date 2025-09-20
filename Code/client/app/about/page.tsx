@@ -216,22 +216,26 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-primary" />
+                  <img src="/unnamed.png" alt="Sameer Gupta" className="w-24 h-24 rounded-full" / >
                 </div>
-                <CardTitle className="text-xl">Team Member 1</CardTitle>
+                <CardTitle className="text-xl">Sameer Gupta</CardTitle>
                 <CardDescription>Project Lead & AI Researcher</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-sm text-muted-foreground mb-4">
                   Specializes in machine learning algorithms and deep-sea biodiversity research. Leading the development of our AI-driven eDNA analysis pipeline.
                 </p>
+
                 <div className="flex justify-center space-x-2">
+                <Link href="mailto:sameer.gupta.ug24@nsut.ac.in">
                   <Button variant="outline" size="sm">
                     <Mail className="h-4 w-4" />
+                  </Button></Link>
+                  <Link href="https://linkedin.com/in/sameer-gupta-768b28312/" target="_blank" rel="noopener noreferrer">
+                  <Button  variant="outline" size="sm">
+                    <Linkedin  className="h-4 w-4" />
                   </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="h-4 w-4" />
-                  </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -240,9 +244,9 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-accent" />
+                  <img src="/anmol.jpg" alt="Anmol Mittal" className="w-24 h-24 rounded-full" />
                 </div>
-                <CardTitle className="text-xl">Team Member 2</CardTitle>
+                <CardTitle className="text-xl">Anmol Mittal</CardTitle>
                 <CardDescription>Bioinformatics Specialist</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
@@ -250,12 +254,16 @@ export default function AboutPage() {
                   Expert in genomic data analysis and environmental DNA processing. Responsible for developing the core bioinformatics workflows and data preprocessing.
                 </p>
                 <div className="flex justify-center space-x-2">
+                <Link href="mailto:anmol.mittal.ug24@nsut.ac.in">
                   <Button variant="outline" size="sm">
                     <Mail className="h-4 w-4" />
                   </Button>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/anmol-mittal-095b79312/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="sm">
                     <Linkedin className="h-4 w-4" />
                   </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -264,9 +272,9 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-primary" />
+                  <img src="/veda.jpg" alt="veda joshi" className="w-24 h-24 rounded-full" />
                 </div>
-                <CardTitle className="text-xl">Team Member 3</CardTitle>
+                <CardTitle className="text-xl">Veda Joshi</CardTitle>
                 <CardDescription>Full-Stack Developer</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
@@ -274,12 +282,15 @@ export default function AboutPage() {
                   Develops the web application interface and backend systems. Creates intuitive user experiences for researchers to interact with our AI tools.
                 </p>
                 <div className="flex justify-center space-x-2">
+                  <Link href="mailto:veda.joshi.ug24@nsut.ac.in">
                   <Button variant="outline" size="sm">
                     <Mail className="h-4 w-4" />
-                  </Button>
+                  </Button></Link>
+                  <Link href="https://www.linkedin.com/in/veda-joshi1409?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="sm">
                     <Linkedin className="h-4 w-4" />
                   </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -288,9 +299,9 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-accent" />
+                  <img src="/sanidhya.jpg" alt="sanidhya upadhyay" className="w-24 h-24 rounded-full" />
                 </div>
-                <CardTitle className="text-xl">Team Member 4</CardTitle>
+                <CardTitle className="text-xl">Sanidhya Upadhyay</CardTitle>
                 <CardDescription>Marine Biology Consultant</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
@@ -298,12 +309,16 @@ export default function AboutPage() {
                   Provides domain expertise in marine ecology and taxonomy. Ensures our AI models align with biological principles and conservation needs.
                 </p>
                 <div className="flex justify-center space-x-2">
+                  <Link href="mailto:sanidhya.upadhyay.ug24@nsut.ac.in">
                   <Button variant="outline" size="sm">
                     <Mail className="h-4 w-4" />
                   </Button>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/sanidhyaupadhyay?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="sm">
                     <Linkedin className="h-4 w-4" />
                   </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -312,9 +327,9 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-primary" />
+                  <img src="/kunal.jpg" alt="kunal verma" className="w-24 h-24 rounded-full" />
                 </div>
-                <CardTitle className="text-xl">Team Member 5</CardTitle>
+                <CardTitle className="text-xl">Kunal Verma</CardTitle>
                 <CardDescription>Data Scientist</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
@@ -322,12 +337,16 @@ export default function AboutPage() {
                   Focuses on statistical analysis and model validation. Develops metrics and evaluation frameworks for assessing AI performance in biodiversity assessment.
                 </p>
                 <div className="flex justify-center space-x-2">
+                  <Link href="mailto:kunal.verma.ug24@nsut.ac.in">
                   <Button variant="outline" size="sm">
                     <Mail className="h-4 w-4" />
                   </Button>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/kunalverma10/" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="sm">
                     <Linkedin className="h-4 w-4" />
                   </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -336,9 +355,9 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-accent" />
+                  <img src="/aniket.jpg" alt="aniket raj" className="w-24 h-24 rounded-full" />
                 </div>
-                <CardTitle className="text-xl">Team Member 6</CardTitle>
+                <CardTitle className="text-xl">Aniket Raj</CardTitle>
                 <CardDescription>UI/UX Designer</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
@@ -346,12 +365,11 @@ export default function AboutPage() {
                   Designs intuitive interfaces and user experiences. Ensures our complex AI tools are accessible and user-friendly for marine researchers worldwide.
                 </p>
                 <div className="flex justify-center space-x-2">
+                  <Link href="mailto:aniket.raj.ug24@nsut.ac.in">
                   <Button variant="outline" size="sm">
                     <Mail className="h-4 w-4" />
                   </Button>
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="h-4 w-4" />
-                  </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
