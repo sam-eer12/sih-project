@@ -856,7 +856,7 @@ def main():
     Main function to run the eDNA processing pipeline
     """
     # Initialize processor
-    dataset_path = r"c:\Users\SAMEER GUPTA\Downloads\sih-project\dataset"
+    dataset_path = r"c:\Users\SAMEER GUPTA\Downloads\sih-project\code\dataset"
     processor = eDNAProcessor(dataset_path)
     
     print("=== eDNA Processing Pipeline for Deep-Sea Biodiversity ===")
