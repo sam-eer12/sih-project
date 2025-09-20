@@ -1,4 +1,4 @@
-# PS Chosen SIH Hackathon
+# SIH25042 Identifying Taxonomy and Assessing Biodiversity from eDNA Datasets
 
 This README provides an overview of the project, including team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
 
@@ -27,4 +27,4 @@ This README provides an overview of the project, including team details, relevan
 
 ## Note
 
-**NOTE:as of now The server is not running on vercel due to some api related issues just the frontend is live**
+**As of now The server is not running on vercel due to some api related issues just the frontend is live**
