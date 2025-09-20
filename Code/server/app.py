@@ -8,7 +8,7 @@ This Flask application provides REST API endpoints for:
 3. Real-time biodiversity analysis
 """
 
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, render_template_string
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
@@ -205,7 +205,7 @@ def validate_dna_sequence(sequence):
 
 @app.route('/', methods=['GET'])
 def base_route():
-    """Base route with random message"""
+    """Base route with random message displayed on screen"""
     random_messages = [
         "🌊 Welcome to the Deep-Sea eDNA Analysis Portal! Dive into biodiversity discovery!",
         "🧬 Exploring the mysteries of deep-sea life through environmental DNA!",
@@ -220,22 +220,181 @@ def base_route():
     ]
     
     selected_message = random.choice(random_messages)
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
-    return jsonify({
-        'message': selected_message,
-        'project': 'SIH 2024 - AI-driven Deep-Sea Biodiversity Assessment',
-        'description': 'Environmental DNA analysis pipeline for discovering marine biodiversity',
-        'version': '1.0.0',
-        'endpoints': {
-            'health': '/api/health',
-            'classify_sequence': '/api/classify/sequence',
-            'classify_file': '/api/classify/file',
-            'analysis_results': '/api/analysis/<id>',
-            'export_results': '/api/export/<id>/<format>',
-            'system_stats': '/api/stats'
-        },
-        'timestamp': datetime.now().isoformat()
-    })
+    html_template = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DeepSea eDNA AI Portal</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+                color: white;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            
+            .container {
+                text-align: center;
+                max-width: 800px;
+                padding: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            }
+            
+            .logo {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                background: linear-gradient(45deg, #3b82f6, #06b6d4);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .random-message {
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-bottom: 30px;
+                line-height: 1.4;
+                color: #e2e8f0;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            
+            .project-info {
+                background: rgba(59, 130, 246, 0.1);
+                padding: 25px;
+                border-radius: 15px;
+                margin: 30px 0;
+                border-left: 4px solid #3b82f6;
+            }
+            
+            .project-title {
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 10px;
+            }
+            
+            .project-desc {
+                font-size: 1.1rem;
+                color: #cbd5e1;
+                line-height: 1.5;
+            }
+            
+            .endpoints {
+                margin-top: 30px;
+                text-align: left;
+            }
+            
+            .endpoints h3 {
+                color: #06b6d4;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+            }
+            
+            .endpoint {
+                background: rgba(6, 182, 212, 0.1);
+                padding: 10px 15px;
+                margin: 8px 0;
+                border-radius: 8px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9rem;
+                color: #a5f3fc;
+                border-left: 3px solid #06b6d4;
+            }
+            
+            .refresh-btn {
+                background: linear-gradient(45deg, #3b82f6, #06b6d4);
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 25px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 25px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            }
+            
+            .refresh-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            }
+            
+            .timestamp {
+                margin-top: 20px;
+                font-size: 0.9rem;
+                color: #94a3b8;
+                font-style: italic;
+            }
+            
+            .wave {
+                animation: wave 2s ease-in-out infinite;
+            }
+            
+            @keyframes wave {
+                0%, 100% { transform: rotate(0deg); }
+                25% { transform: rotate(10deg); }
+                75% { transform: rotate(-10deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">🧬 DeepSea eDNA AI</div>
+            
+            <div class="random-message">
+                {{ message }}
+            </div>
+            
+            <div class="project-info">
+                <div class="project-title">SIH 2024 - AI-driven Deep-Sea Biodiversity Assessment</div>
+                <div class="project-desc">
+                    Environmental DNA analysis pipeline for discovering marine biodiversity using advanced machine learning algorithms
+                </div>
+            </div>
+            
+            <div class="endpoints">
+                <h3>🔗 Available API Endpoints:</h3>
+                <div class="endpoint">POST /api/classify/sequence - Single sequence classification</div>
+                <div class="endpoint">POST /api/classify/file - File upload and batch processing</div>
+                <div class="endpoint">GET /api/analysis/&lt;id&gt; - Detailed analysis results</div>
+                <div class="endpoint">GET /api/export/&lt;id&gt;/&lt;format&gt; - Export results</div>
+                <div class="endpoint">GET /api/stats - System statistics</div>
+                <div class="endpoint">GET /api/health - Health check</div>
+            </div>
+            
+            <button class="refresh-btn" onclick="window.location.reload()">
+                <span class="wave">🌊</span> Get New Message
+            </button>
+            
+            <div class="timestamp">
+                Generated on {{ timestamp }}
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+    
+    return render_template_string(html_template, message=selected_message, timestamp=current_time)
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
