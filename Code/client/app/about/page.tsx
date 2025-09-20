@@ -216,7 +216,7 @@ export default function AboutPage() {
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <img src="/unnamed.png" alt="Sameer Gupta" className="w-24 h-24 rounded-full" / >
+                  <img src="/sameer.jpg" alt="Sameer Gupta" className="w-24 h-24 rounded-full" / >
                 </div>
                 <CardTitle className="text-xl">Sameer Gupta</CardTitle>
                 <CardDescription>Project Lead & AI Researcher</CardDescription>
