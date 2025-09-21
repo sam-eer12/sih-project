@@ -15,7 +15,7 @@ This README provides an overview of the project, including team details, relevan
 - **Anmol Mittal** - 2024UIC4133 - [@anmolmittal69](https://github.com/anmolmittal69)
 - **Sanidhya Upadhyay** - 2024UIC4137 - [@SanidhyaUpadhyay1](https://github.com/SanidhyaUpadhyay1)
 - **Kunal Verma** - 2024UIC4155 - [@kunalverma-1](https://github.com/kunalverma-1)
-- **Aniket Raj** - 2024UIC4158 - [@USERNAME](https://github.com/USERNAME)
+- **Aniket Raj** - 2024UIC4158 - [@Aniket-10-0](https://github.com/Aniket-10-0)
 
 ## Project Links
 
