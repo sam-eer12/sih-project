@@ -236,10 +236,10 @@ export default function Dashboard() {
               <Link href="/solution" className="text-muted-foreground hover:text-foreground transition-colors">
                 Solution
               </Link>
-              <Button variant="outline" size="sm">
+              {/* <Button variant="outline" size="sm">
                 <Download className="h-4 w-4 mr-2" />
                 Export Data
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -620,14 +620,12 @@ export default function Dashboard() {
                   <ExternalLink className="h-4 w-4 mr-2" />
                   View in Database
                 </Button>
-                <Button variant="outline" size="sm">
-                  <Download className="h-4 w-4 mr-2" />
-                  Export Sequences
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Info className="h-4 w-4 mr-2" />
-                  Research Notes
-                </Button>
+                <Link href="https://www.mdpi.com/1424-2818/12/4/123?utm_source=chatgpt.com" target="_blank">
+                  <Button variant="outline" size="sm">
+                    <Info className="h-4 w-4 mr-2" />
+                    Research Notes
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

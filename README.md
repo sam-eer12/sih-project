@@ -25,6 +25,3 @@ This README provides an overview of the project, including team details, relevan
 - **Source Code:** [GitHub Repository](https://github.com/sam-eer12/sih-project)
 - **Additional Resources:** [Our colleceted dataset](https://drive.google.com/drive/folders/1tG1go0HU-evbB8VfIPE50LkZiDRy2afi?usp=drive_link)
 
-## Note
-
-**As of now The server is not running on vercel due to some api related issues just the frontend is live**

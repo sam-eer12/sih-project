@@ -26,11 +26,11 @@ export default function HomePage() {
                 Solution
               </Link>
               <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-                Dashboard
-              </Link>
               <Button variant="outline" size="sm">
-                Get Started
+                Dashboard
               </Button>
+              </Link>
+              
             </div>
           </div>
         </div>
@@ -51,13 +51,15 @@ export default function HomePage() {
               unknown species from environmental DNA samples in the deep ocean.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
+              <Link href="/dashboard" className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors" >
+              <Button size="lg" className="text-lg cursor-pointer px-8">
                 Explore Dashboard
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
+              </Button></Link>
+              <Link href="/about">
+              <Button variant="outline" size="lg" className="text-lg cursor-pointer px-8 bg-transparent">
                 Learn More
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </div>
