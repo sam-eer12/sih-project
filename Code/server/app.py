@@ -25,13 +25,12 @@ import math
 import random
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for frontend integration
+CORS(app)  
 
-# Configuration
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 
 app.config['UPLOAD_FOLDER'] = tempfile.gettempdir()
 
-# Allowed file extensions
 ALLOWED_EXTENSIONS = {'csv', 'fasta', 'fa', 'fas', 'txt'}
 
 # Lightweight implementation without heavy ML dependencies
@@ -204,6 +203,10 @@ def validate_dna_sequence(sequence):
     return True, sequence
 
 
+@app.route('/', methods=['GET'])
+def hello():
+    """Base URL endpoint that returns hello"""
+    return "Hello"
 
 @app.route('/api/health', methods=['GET'])
 def health_check():

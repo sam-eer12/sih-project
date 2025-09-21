@@ -1,4 +1,3 @@
-# Exclude large files and directories from Vercel deployment
 phylum_classifier_model.pkl
 models/
 __pycache__/
@@ -29,5 +28,4 @@ dist/
 build/
 test_pipeline.py
 usage_examples.py
-edna_pipeline.py
 README.md
