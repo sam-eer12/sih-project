@@ -616,10 +616,12 @@ export default function Dashboard() {
               )}
 
               <div className="flex flex-wrap gap-3 pt-4 border-t border-border/50">
-                <Button variant="outline" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View in Database
-                </Button>
+                <Link href="https://github.com/sam-eer12/sih-project/blob/main/Code/dataset/README.md" target="_blank">
+                  <Button variant="outline" size="sm">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View in Database
+                  </Button>
+                </Link>
                 <Link href="https://www.mdpi.com/1424-2818/12/4/123?utm_source=chatgpt.com" target="_blank">
                   <Button variant="outline" size="sm">
                     <Info className="h-4 w-4 mr-2" />
