@@ -19,7 +19,7 @@ This README provides an overview of the project, including team details, relevan
 
 ## Project Links
 
-- **SIH Presentation:** [Final SIH Presentation](https://github.com/sam-eer12/sih-project)
+- **SIH Presentation:** [Final SIH Presentation](https://drive.google.com/file/d/1Uti81isCQ8gZB8Zc9J82aNs2Fl8B1Nif/view?usp=sharing)
 - **Video Demonstration:** [Watch Video](UNLISTED YOUTUBE LINK)
 - **Live Deployment:** [View Deployment](https://sih-project-uimw.vercel.app/)
 - **Source Code:** [GitHub Repository](https://github.com/sam-eer12/sih-project)
