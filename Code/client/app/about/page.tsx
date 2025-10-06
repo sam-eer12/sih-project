@@ -202,7 +202,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Members */}
-      <section className="py-20 bg-card/30">
+      {/* <section className="py-20 bg-card/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Meet Our Team</h2>
@@ -212,7 +212,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
+            
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
@@ -240,7 +240,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            {/* Team Member 2 */}
+            
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
@@ -268,7 +268,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            {/* Team Member 3 */}
+
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
@@ -295,7 +295,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            {/* Team Member 4 */}
+            
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
@@ -323,7 +323,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            {/* Team Member 5 */}
+           
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
@@ -351,7 +351,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            {/* Team Member 6 */}
+           
             <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
@@ -375,9 +375,8 @@ export default function AboutPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      
     </div>
   )
 }
